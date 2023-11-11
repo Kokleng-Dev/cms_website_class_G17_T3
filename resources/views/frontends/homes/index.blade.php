@@ -6,7 +6,7 @@
 @section('content')
     @include('frontends.homes.1_about')
     @include('frontends.homes.2_client')
-    @include('frontends.homes.3_feature')
+    {{-- @include('frontends.homes.3_feature') --}}
     @include('frontends.homes.4_service')
     @include('frontends.homes.5_cta')
     @include('frontends.homes.6_portfolio')

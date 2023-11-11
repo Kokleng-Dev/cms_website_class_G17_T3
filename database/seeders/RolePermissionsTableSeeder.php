@@ -139,6 +139,102 @@ class RolePermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            10 => 
+            array (
+                'id' => 11,
+                'role_id' => 1,
+                'permission_id' => 7,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'role_id' => 2,
+                'permission_id' => 7,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'role_id' => 1,
+                'permission_id' => 8,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'role_id' => 2,
+                'permission_id' => 8,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'role_id' => 1,
+                'permission_id' => 9,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'role_id' => 2,
+                'permission_id' => 9,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'role_id' => 1,
+                'permission_id' => 10,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'role_id' => 2,
+                'permission_id' => 10,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

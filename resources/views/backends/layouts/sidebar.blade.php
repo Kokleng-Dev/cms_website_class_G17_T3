@@ -40,6 +40,30 @@
                     </a>
                 </li>
                 @endif
+                @if(checkPermission('_service','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._service') }}" class="nav-link {{ Route::is('admin._service') || Route::is('admin._service.create') || Route::is('admin._service.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('Service Section')}}</p>
+                    </a>
+                </li>
+                @endif
+                @if(checkPermission('_cta','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._cta') }}" class="nav-link {{ Route::is('admin._cta') || Route::is('admin._cta.create') || Route::is('admin._cta.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('Cta Section')}}</p>
+                    </a>
+                </li>
+                @endif
+                @if(checkPermission('_portfolio','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._portfolio') }}" class="nav-link {{ Route::is('admin._portfolio') || Route::is('admin._portfolio.create') || Route::is('admin._portfolio.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('Portfolio Section')}}</p>
+                    </a>
+                </li>
+                @endif
                 <li class="nav-item" id="setting">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tools"></i>

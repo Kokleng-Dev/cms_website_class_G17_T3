@@ -59,6 +59,38 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            5 => 
+            array (
+                'id' => 7,
+                'name' => 'Service Section',
+                'key' => '_service',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 8,
+                'name' => 'Cta Section',
+                'key' => '_cta',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 9,
+                'name' => 'Portfolio Section',
+                'key' => '_portfolio',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 10,
+                'name' => 'Portfolio Detail Section',
+                'key' => '_portfolio_detail',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

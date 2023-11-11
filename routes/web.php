@@ -76,6 +76,38 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backends'],function(){
         Route::get('/client-section/{client_id}/edit', 'ClientController@edit')->name('admin._client.edit')->middleware('permission:_client,edit');
         Route::post('/client-section/{client_id}/update', 'ClientController@update')->name('admin._client.update')->middleware('permission:_client,edit');
         Route::get('/client-section/{client_id}/delete', 'ClientController@delete')->name('admin._client.delete')->middleware('permission:_client,delete');
+
+        //_service
+        Route::get('/service-section', 'ServiceController@about')->name('admin._service')->middleware('permission:_service,view');
+        Route::get('/service-section/create', 'ServiceController@create')->name('admin._service.create')->middleware('permission:_service,create');
+        Route::post('/service-section/store', 'ServiceController@store')->name('admin._service.store')->middleware('permission:_service,create');
+        Route::get('/service-section/{client_id}/edit', 'ServiceController@edit')->name('admin._service.edit')->middleware('permission:_service,edit');
+        Route::post('/service-section/{client_id}/update', 'ServiceController@update')->name('admin._service.update')->middleware('permission:_service,edit');
+        Route::get('/service-section/{client_id}/delete', 'ServiceController@delete')->name('admin._service.delete')->middleware('permission:_service,delete');
+
+        //_cta
+        Route::get('/cta-section', 'CtaController@about')->name('admin._cta')->middleware('permission:_cta,view');
+        Route::get('/cta-section/create', 'CtaController@create')->name('admin._cta.create')->middleware('permission:_cta,create');
+        Route::post('/cta-section/store', 'CtaController@store')->name('admin._cta.store')->middleware('permission:_cta,create');
+        Route::get('/cta-section/{cta_id}/edit', 'CtaController@edit')->name('admin._cta.edit')->middleware('permission:_cta,edit');
+        Route::post('/cta-section/{cta_id}/update', 'CtaController@update')->name('admin._cta.update')->middleware('permission:_cta,edit');
+        Route::get('/cta-section/{cta_id}/delete', 'CtaController@delete')->name('admin._cta.delete')->middleware('permission:_cta,delete');
+
+        //_portfolio
+        Route::get('/portfolio-section', 'PortfolioController@about')->name('admin._portfolio')->middleware('permission:_portfolio,view');
+        Route::get('/portfolio-section/create', 'PortfolioController@create')->name('admin._portfolio.create')->middleware('permission:_portfolio,create');
+        Route::post('/portfolio-section/store', 'PortfolioController@store')->name('admin._portfolio.store')->middleware('permission:_portfolio,create');
+        Route::get('/portfolio-section/{portfolio_id}/edit', 'PortfolioController@edit')->name('admin._portfolio.edit')->middleware('permission:_portfolio,edit');
+        Route::post('/portfolio-section/{portfolio_id}/update', 'PortfolioController@update')->name('admin._portfolio.update')->middleware('permission:_portfolio,edit');
+        Route::get('/portfolio-section/{portfolio_id}/delete', 'PortfolioController@delete')->name('admin._portfolio.delete')->middleware('permission:_portfolio,delete');
+
+        //_portfolio detail
+        Route::get('/portfolio/{portfolio_id}/detail-section/', 'PortfolioDetailController@index')->name('admin._portfolio.detail')->middleware('permission:_portfolio_detail,view');
+        Route::get('/portfolio/detail-section/create', 'PortfolioDetailController@create')->name('admin._portfolio.detail.create')->middleware('permission:_portfolio_detail,create');
+        Route::post('/portfolio/detail-section/store', 'PortfolioDetailController@store')->name('admin._portfolio.detail.store')->middleware('permission:_portfolio_detail,create');
+        Route::get('/portfolio/detail-section/{detail_id}/edit', 'PortfolioDetailController@edit')->name('admin._portfolio.detail.edit')->middleware('permission:_portfolio_detail,edit');
+        Route::post('/portfolio/detail-section/{detail_id}/update', 'PortfolioDetailController@update')->name('admin._portfolio.detail.update')->middleware('permission:_portfolio_detail,edit');
+        Route::get('/portfolio/detail-section/{detail_id}/delete', 'PortfolioDetailController@delete')->name('admin._portfolio.detail.delete')->middleware('permission:_portfolio_detail,delete');
     });
 
     Route::get('/login', 'AuthController@login')->name('admin.login');
