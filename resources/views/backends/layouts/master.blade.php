@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}?v=3.2.0">
+    <style>
+        table tr td, table tr th {
+            vertical-align: middle !important
+        }
+    </style>
     @stack('css')
 </head>
 

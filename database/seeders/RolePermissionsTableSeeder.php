@@ -91,6 +91,54 @@ class RolePermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'role_id' => 1,
+                'permission_id' => 5,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'role_id' => 1,
+                'permission_id' => 6,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'role_id' => 2,
+                'permission_id' => 5,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'role_id' => 2,
+                'permission_id' => 6,
+                'view' => 1,
+                'create' => 1,
+                'edit' => 1,
+                'delete' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

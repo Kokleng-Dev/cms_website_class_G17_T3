@@ -60,6 +60,22 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backends'],function(){
         Route::get('/company/{company_id}/edit', 'CompanyController@edit')->name('admin.company.edit');
         Route::post('/company/{company_id}/update', 'CompanyController@update')->name('admin.company.update');
         Route::get('/company/{company_id}/delete', 'CompanyController@delete')->name('admin.company.delete');
+
+        //_about
+        Route::get('/about-section', 'AboutController@about')->name('admin._about')->middleware('permission:_about,view');
+        Route::get('/about-section/create', 'AboutController@create')->name('admin._about.create')->middleware('permission:_about,create');
+        Route::post('/about-section/store', 'AboutController@store')->name('admin._about.store')->middleware('permission:_about,create');
+        Route::get('/about-section/{about_id}/edit', 'AboutController@edit')->name('admin._about.edit')->middleware('permission:_about,edit');
+        Route::post('/about-section/{about_id}/update', 'AboutController@update')->name('admin._about.update')->middleware('permission:_about,edit');
+        Route::get('/about-section/{about_id}/delete', 'AboutController@delete')->name('admin._about.delete')->middleware('permission:_about,delete');
+
+        //_client
+        Route::get('/client-section', 'ClientController@about')->name('admin._client')->middleware('permission:_client,view');
+        Route::get('/client-section/create', 'ClientController@create')->name('admin._client.create')->middleware('permission:_client,create');
+        Route::post('/client-section/store', 'ClientController@store')->name('admin._client.store')->middleware('permission:_client,create');
+        Route::get('/client-section/{client_id}/edit', 'ClientController@edit')->name('admin._client.edit')->middleware('permission:_client,edit');
+        Route::post('/client-section/{client_id}/update', 'ClientController@update')->name('admin._client.update')->middleware('permission:_client,edit');
+        Route::get('/client-section/{client_id}/delete', 'ClientController@delete')->name('admin._client.delete')->middleware('permission:_client,delete');
     });
 
     Route::get('/login', 'AuthController@login')->name('admin.login');

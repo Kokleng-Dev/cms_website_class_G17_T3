@@ -11,7 +11,6 @@ class CompanyController extends Controller
     public function index(){
 
         $companies = DB::table('companies')
-                    ->where('id','!=', profile()->role_id == 1 ? '' : 1)
                     ->paginate(5);
         return view('backends.companies.index', compact('companies'));
     }

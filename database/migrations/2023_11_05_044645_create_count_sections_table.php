@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('count_sections', function (Blueprint $table) {
             $table->id();
+            $table->string('description')->nullable();
+            $table->string('title')->nullable();
+            $table->integer('count')->default(10);
+            $table->text('note')->nullable();
+            $table->tinyInteger('is_public')->default(1)->comment('1: show to website, 0: no');
             $table->timestamps();
         });
     }

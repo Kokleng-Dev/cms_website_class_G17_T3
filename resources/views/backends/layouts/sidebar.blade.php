@@ -24,6 +24,22 @@
                         <p>{{__('Home')}}</p>
                     </a>
                 </li>
+                @if(checkPermission('_about','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._about') }}" class="nav-link {{ Route::is('admin._about') || Route::is('admin._about.create') || Route::is('admin._about.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('About Section')}}</p>
+                    </a>
+                </li>
+                @endif
+                @if(checkPermission('_client','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._client') }}" class="nav-link {{ Route::is('admin._client') || Route::is('admin._client.create') || Route::is('admin._client.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('Client Section')}}</p>
+                    </a>
+                </li>
+                @endif
                 <li class="nav-item" id="setting">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tools"></i>
