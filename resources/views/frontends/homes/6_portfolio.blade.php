@@ -11,16 +11,36 @@
             <div class="col-lg-12 d-flex justify-content-center">
               <ul id="portfolio-flters">
                 <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-card">Card</li>
-                <li data-filter=".filter-web">Web</li>
-              </ul>
+                @foreach ($portfolios as $index => $portfolio)
+                  <li data-filter=".filter-app{{$portfolio->id}}">{{ $portfolio->name}}</li>
+                @endforeach
+                {{-- <li data-filter=".filter-card">Card</li>
+                <li data-filter=".filter-web">Web</li> --}}
+              </ul> 
             </div>
           </div>
   
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-  
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            @php
+                $details = DB::table('portfolio_section_details')->where('is_public',1)->get();
+            @endphp
+
+            @foreach ($details as $detail)
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app{{$detail->portfolio_section_id}}">
+                <div class="portfolio-wrap">
+                  <img src="{{ $detail->photo }}" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>{{ $detail->name }}</h4>
+                    <p>App</p>
+                    <div class="portfolio-links">
+                      <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                      <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+            {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-wrap">
                 <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
@@ -144,7 +164,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
   
           </div>
   

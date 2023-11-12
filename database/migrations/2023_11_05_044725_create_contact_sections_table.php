@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('contact_sections', function (Blueprint $table) {
             $table->id();
+            $table->text('location')->nullable();
+            $table->tinyInteger('is_public')->default(1)->comment('1: show to website, 0: no');
             $table->timestamps();
         });
     }

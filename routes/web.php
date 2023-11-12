@@ -61,6 +61,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backends'],function(){
         Route::post('/company/{company_id}/update', 'CompanyController@update')->name('admin.company.update');
         Route::get('/company/{company_id}/delete', 'CompanyController@delete')->name('admin.company.delete');
 
+        //_hero
+        Route::get('/hero-section', 'HeroController@about')->name('admin._hero')->middleware('permission:_hero,view');
+        Route::get('/hero-section/create', 'HeroController@create')->name('admin._hero.create')->middleware('permission:_hero,create');
+        Route::post('/hero-section/store', 'HeroController@store')->name('admin._hero.store')->middleware('permission:_hero,create');
+        Route::get('/hero-section/{about_id}/edit', 'HeroController@edit')->name('admin._hero.edit')->middleware('permission:_hero,edit');
+        Route::post('/hero-section/{about_id}/update', 'HeroController@update')->name('admin._hero.update')->middleware('permission:_hero,edit');
+        Route::get('/hero-section/{about_id}/delete', 'HeroController@delete')->name('admin._hero.delete')->middleware('permission:_hero,delete');
+
         //_about
         Route::get('/about-section', 'AboutController@about')->name('admin._about')->middleware('permission:_about,view');
         Route::get('/about-section/create', 'AboutController@create')->name('admin._about.create')->middleware('permission:_about,create');
@@ -103,8 +111,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backends'],function(){
 
         //_portfolio detail
         Route::get('/portfolio/{portfolio_id}/detail-section/', 'PortfolioDetailController@index')->name('admin._portfolio.detail')->middleware('permission:_portfolio_detail,view');
-        Route::get('/portfolio/detail-section/create', 'PortfolioDetailController@create')->name('admin._portfolio.detail.create')->middleware('permission:_portfolio_detail,create');
-        Route::post('/portfolio/detail-section/store', 'PortfolioDetailController@store')->name('admin._portfolio.detail.store')->middleware('permission:_portfolio_detail,create');
+        Route::get('/portfolio/detail-section/{portfolio_id}/create', 'PortfolioDetailController@create')->name('admin._portfolio.detail.create')->middleware('permission:_portfolio_detail,create');
+        Route::post('/portfolio/detail-section/{portfolio_id}/store', 'PortfolioDetailController@store')->name('admin._portfolio.detail.store')->middleware('permission:_portfolio_detail,create');
         Route::get('/portfolio/detail-section/{detail_id}/edit', 'PortfolioDetailController@edit')->name('admin._portfolio.detail.edit')->middleware('permission:_portfolio_detail,edit');
         Route::post('/portfolio/detail-section/{detail_id}/update', 'PortfolioDetailController@update')->name('admin._portfolio.detail.update')->middleware('permission:_portfolio_detail,edit');
         Route::get('/portfolio/detail-section/{detail_id}/delete', 'PortfolioDetailController@delete')->name('admin._portfolio.detail.delete')->middleware('permission:_portfolio_detail,delete');

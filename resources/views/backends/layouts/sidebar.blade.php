@@ -24,6 +24,14 @@
                         <p>{{__('Home')}}</p>
                     </a>
                 </li>
+                @if(checkPermission('_hero','view'))
+                <li class="nav-item">
+                    <a href="{{ route('admin._hero') }}" class="nav-link {{ Route::is('admin._hero') || Route::is('admin._hero.create') || Route::is('admin._hero.edit') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-info"></i>
+                        <p>{{__('Hero Section')}}</p>
+                    </a>
+                </li>
+                @endif
                 @if(checkPermission('_about','view'))
                 <li class="nav-item">
                     <a href="{{ route('admin._about') }}" class="nav-link {{ Route::is('admin._about') || Route::is('admin._about.create') || Route::is('admin._about.edit') ? 'active' : '' }}">
@@ -58,7 +66,15 @@
                 @endif
                 @if(checkPermission('_portfolio','view'))
                 <li class="nav-item">
-                    <a href="{{ route('admin._portfolio') }}" class="nav-link {{ Route::is('admin._portfolio') || Route::is('admin._portfolio.create') || Route::is('admin._portfolio.edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin._portfolio') }}" 
+                        class="nav-link 
+                        {{ Route::is('admin._portfolio') || 
+                        Route::is('admin._portfolio.create') || 
+                        Route::is('admin._portfolio.edit') || 
+                        Route::is('admin._portfolio.detail') ||
+                        Route::is('admin._portfolio.detail.create') ||
+                        Route::is('admin._portfolio.detail.edit')
+                        ? 'active' : '' }}">
                         <i class="nav-icon fa fa-info"></i>
                         <p>{{__('Portfolio Section')}}</p>
                     </a>
